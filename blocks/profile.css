@@ -105,8 +105,6 @@
   }
 
   .profile__title {
-    font-family: Inter, Arial, sans-serif;
-    font-weight: 500;
     font-size: 22px;
     line-height: 26.63px;
     text-align: center;
@@ -129,7 +127,6 @@
   .profile__add-button {
     margin: 0 auto;
     width: 282px;
-    height: 50px;
     border: none;
   }
 } 
