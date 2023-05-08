@@ -9,7 +9,7 @@ An interactive page where users can add and remove photos, like photos of other 
 [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
 
 **Images of Project**  
-[<img alt="Project 3" height="400px" width="400px" src="https://practicum-content.s3.us-west-1.amazonaws.com/resources/moved_project-3-desktop-mobile_1651235950.png" />]
+[<img alt="Project 3" width="400px" src="https://practicum-content.s3.us-west-1.amazonaws.com/resources/moved_project-3-desktop-mobile_1651235950.png" />]
 
 
 **Link to GitHub**
