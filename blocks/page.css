@@ -1,41 +1,25 @@
-.page {
+  .page {
     background-color: black;
     color: white;
-}
-
-.page__content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 200px;
-    margin-right: 200px;
-    min-height: 100vh;
-}
-
-.page__section {
+  }
+  
+  .page__section {
     max-width: 880px;
     width: 100%;
     position: relative;
     margin: 0 auto;
-}
-
-@media screen and (max-width: 1280px) {
-    .page__content{
-      margin-left: 80px;
-      margin-right: 80px;
+  }
+  
+  .page__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .page__section {
+      margin: 0 20px;
+      max-width: calc(100% - 40px);
     }
   }
-  @media screen and (max-width: 800px) {
-    .page__content{
-      margin-left: 19px;
-      margin-right: 19px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .page__content{
-      margin: 0;
-    }
-    .page__section{
-      width: auto;
-      flex-wrap: wrap;
-    }
-  }
+  

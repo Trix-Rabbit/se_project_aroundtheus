@@ -23,15 +23,13 @@
 }
 
 .profile__title {
-
   grid-area: title;
   margin: 0;
-
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 
-  font-family: Inter, Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 42px;
@@ -51,19 +49,18 @@
 
 .profile__edit-button:hover{
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .profile__description {
-
   grid-area: description;
   margin: 0;
   text-align: left;
-
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 
-  font-family: Inter, Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -81,15 +78,13 @@
 
 .profile__add-button:hover{
   opacity: 0.6;
+  cursor: pointer;
 }
 
 
 @media screen and (max-width: 480px) {
   .profile {
     flex-direction: column;
-    padding: 0 19px 0 19px;
-    justify-content: center;
-    text-align: center;
   }
 
   .profile__image{
@@ -127,6 +122,5 @@
   .profile__add-button {
     margin: 0 auto;
     width: 282px;
-    border: none;
   }
 } 
