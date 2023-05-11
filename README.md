@@ -13,7 +13,7 @@ An interactive page where users can add and remove photos, like photos of other 
 [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
 
 **Link to GitHub**
-https://github.com/Practicum-SE/Boot-Camp
+https://practicum-se.github.io/se_project_aroundtheus
 
 **Version**
 Project 3 Review
