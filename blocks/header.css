@@ -6,9 +6,8 @@
 
 @media screen and (max-width: 480px) {
   .header {
-    padding-top: 28px;
+    padding: 28px 0px 32px 0px;
     width: 100%;
-    padding-bottom: 32px;
     max-width: 100%;
     margin: 0;
   }

@@ -2,13 +2,13 @@
   display: flex;
   padding-top: 40px;
   align-items: center;
+  margin-bottom: 47.25px;
 }
 
   
 .profile__image {
   width: 120px;
   height: 120px;
-  margin-right: 24px;
   object-fit: cover;
   border-radius: 50%;
   background-position: center;
@@ -20,6 +20,7 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto, 373px) auto;
+  margin-left: 22.5px;
 }
 
 .profile__title {
@@ -41,9 +42,7 @@
   height: 24px;
   width: 24px;
   grid-area: button;
-  align-self: center;
   border: 1px solid #fff;
-  padding: 0;
   margin: 0 0 0 18px;
 }
 
@@ -54,8 +53,7 @@
 
 .profile__description {
   grid-area: description;
-  margin: 0;
-  text-align: left;
+  margin: 7px 0px 0px 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -85,18 +83,19 @@
 @media screen and (max-width: 480px) {
   .profile {
     flex-direction: column;
+    margin-bottom: 38px;
   }
 
   .profile__image{
-    margin-bottom: 27px;
-    margin-top: 38px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0px 0px 27px 0px;
   }
 
   .profile__info {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    margin-left: 0;
   }
 
   .profile__title {
@@ -111,16 +110,16 @@
   }
 
   .profile__description {
-    vertical-align: top;
-    margin: 14px 0 36px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 36px;
 
     font-size: 14px;
-    line-height: 16.94px;
-    text-align: center;
+    line-height: 17px;
   }
 
   .profile__add-button {
-    margin: 0 auto;
+    margin: 0;
     width: 282px;
   }
 } 
