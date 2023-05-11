@@ -5,7 +5,7 @@
   margin: 67px auto 60px;
 }
 
-.footer__content {
+.footer__copyright {
   margin: 0;
   width: 318px;
 
@@ -23,7 +23,7 @@
     max-width: calc(100% - 40px);
   }
 
-  .footer__content {
+  .footer__copyright {
     width: 282px;
     font-size: 14px;
     line-height: 17px;
