@@ -1,4 +1,5 @@
 const initialCards = [
+
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -25,9 +26,7 @@ const initialCards = [
   },
 ];
 
-/*--------------------------------------------------- */
-/*            Element                                 */
-/*--------------------------------------------------- */
+// Elements
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileCloseButton = document.querySelector("#modal-close-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -44,9 +43,7 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsSection = document.querySelector(".cards__list");
 
-/*----------------------------------------------------------- */
-/*                Function                                    */
-/*----------------------------------------------------------- */
+// Functions
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
@@ -64,9 +61,7 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-/*----------------------------------------------------------- */
-/*             Event Handelers                                */
-/*----------------------------------------------------------- */
+// Handlers
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
@@ -74,9 +69,8 @@ function handleProfileEditSubmit(e) {
   closePopup();
 }
 
-/*----------------------------------------------------------- */
-/*                   Event Listeners
-/*----------------------------------------------------------- */
+
+// Listeners
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -87,12 +81,8 @@ profileCloseButton.addEventListener("click", closePopup);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
+
+// Template (Load Cards)
 initialCards.forEach((cardData) => {
-  cardsSection.prepend(getCardElement(cardData));
-  //clone the template element with all its content and store it in a cardElement variable
-  //access the card title and image and store them in variables
-  //set the path to the image to the link field of the object
-  //set the image alt text to the name field of the object
-  //set the card title to the name field of the object, too
-  //return the ready HTML element with the filled-in data
+  cardsSection.append(getCardElement(cardData));
 });
