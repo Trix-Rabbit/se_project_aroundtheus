@@ -4,7 +4,7 @@
   border-bottom: 1px solid rgb(84, 84, 84, 0.7);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 880px) {
   .header {
     padding: 28px 0px 32px 0px;
     width: 100%;
