@@ -20,9 +20,9 @@
         <section class="profile page__section">
           <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="avatar jacques cousteau"/>
           <div class="profile__info">
-            <h1  id="profile-title" class="profile__title">Jacques Cousteau</h1>
+            <h1 id="profile-title" class="profile__title">Jacques Cousteau</h1>
             <button id="profile-edit-button" class="profile__edit-button" type="button"></button>
-            <p id="profile-description" class="profile__description">Explorer</p>
+            <h2 id="profile-description" class="profile__description">Explorer</h2>
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
@@ -39,21 +39,10 @@
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" id="profile-modal-close-button"></button>
-
         <form class="modal__form">
-          <p class="modal__title">Edit Profile</p>
-            <input
-            id="profile-title-input"
-            class="modal__input"
-            type="text"
-              placeholder="Name"
-            />
-            <input
-              id="profile-description-input"
-              class="modal__input"
-              type="text"
-              placeholder="About me"
-            />
+          <h1 class="modal__title">Edit Profile</h1>
+            <input id="profile-title-input" class="modal__input" type="text" placeholder="Name" />
+            <input id="profile-description-input" class="modal__input" type="text" placeholder="About me"/>
             <button class="modal__button" type="submit">Save</button>
         </form>
       </div>
@@ -65,9 +54,9 @@
       <div class="modal__container">
         <button class="modal__close" id="add-card-modal-close-button"></button>
         <form class="modal__form" id="add-card-form">
-          <p class="modal__title">New place</p>
+          <h1 class="modal__title">New Place</h1>
             <input id="add-card-title-input" class="modal__input" type="text" placeholder="Title"/>
-            <input id="add-card-image-url" class="modal__input" type="text" placeholder="Image link"/>
+            <input id="add-card-image-url" class="modal__input" type="url" placeholder="Image link"/>
             <button class="modal__button" type="submit">Create</button>
         </form>
       </div>

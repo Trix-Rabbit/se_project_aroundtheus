@@ -8,15 +8,22 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
 
+   visibility: none; /* invisible */
+   opacity: 0; /* opacity has numeric value, so we can animate it */
+   pointer-events: none; /* can't interact with closed popup */
+   transition: visibility 0s 0.5s, opacity 0.5s linear; /* animation settings */
+
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   padding-top: 195px;
 }
 
 .modal_opened {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 195px;
-
-  transition: visibility 0s 0.5s, opacity 0.5s;
+   visibility: visible; /* visible */
+   opacity: 1; /* opacity has numeric value, so we can animate it */
+   pointer-events: all; /* can interact with opened popup */
+   transition: visibility 0s, opacity 0.5s linear; /* animation settings */
 }
 
 .modal__container {
@@ -64,7 +71,7 @@
 }
 
 .modal__input {
-  min-width: 358px;
+  width: 100%;
   min-height: 35px;
   border-top: none;
   border-left: none;
@@ -79,7 +86,7 @@
 }
 
 .modal__button {
-  min-width: 117px;
+  width: 100%;
   min-height: 50px;
   background: #000;
   border-radius: 2px;
