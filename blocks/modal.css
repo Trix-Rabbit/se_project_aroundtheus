@@ -8,15 +8,23 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
 
-   visibility: none; /* invisible */
-   opacity: 0; /* opacity has numeric value, so we can animate it */
-   pointer-events: none; /* can't interact with closed popup */
-   transition: visibility 0s 0.5s, opacity 0.5s linear; /* animation settings */
+  visibility: none; /* invisible */
+  opacity: 0; /* opacity has numeric value, so we can animate it */
+  pointer-events: none; /* can't interact with closed popup */
+  transition: visibility 0s 0.5s, opacity 0.5s linear; /* animation settings */
 
    display: flex;
    justify-content: center;
    align-items: flex-start;
    padding-top: 195px;
+
+   /* 
+   .modal_opened should have only the styles related to opened modal state, 
+   and they are opacity, visibility, transition and pointer-events 
+   (none for closed popup and all for opened popup - it disables interactions with the popup while it's closed). 
+   display, justify-content, align-items and padding-top should be in .modal 
+   */
+
 }
 
 .modal_opened {
@@ -24,6 +32,14 @@
    opacity: 1; /* opacity has numeric value, so we can animate it */
    pointer-events: all; /* can interact with opened popup */
    transition: visibility 0s, opacity 0.5s linear; /* animation settings */
+
+   /* 
+   Popups should open and close smoothly and animate visibility and opacity properties. 
+   Don't use display for changing popup visibility. 
+   Use pointer-events to disable interactions with the popup while it's closed.
+  .modal should have a delay of 0.5s (= opacity transition duration) for visibility transition 
+  (when we close a popup, visibility will be hidden after opacity transition) 
+  */
 }
 
 .modal__container {
