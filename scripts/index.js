@@ -59,6 +59,25 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 /* FUNCTIONS */
 
+// Project 6 Step 3 - Close Modal form when mouse click is detected outside the form 
+// Add Listeners 
+const addClickOutPopupListener = (modal) => {
+  modal.addEventListener("mousedown", function (e) {
+    if (e.target === e.currentTarget) {
+      closePopup(modal);
+    }
+  });
+};
+
+// Listener for Edit Modal
+addClickOutPopupListener(profileEditModal);
+// Listener for Add Card Modal
+addClickOutPopupListener(addCardModal);
+// Listener for Preview Image
+addClickOutPopupListener(previewImageModal);
+
+
+// Project 5
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
@@ -89,10 +108,14 @@ function getCardElement(data) {
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+// Project 6 Step 4 - Close modal form when the escape key is pressed
+  document.addEventListener("keydown", closeModalWithEsc);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+// Project 6 Step 4 - Close modal form when the escape key is pressed
+  document.removeEventListener("keydown", closeModalWithEsc);
 }
 
 function renderCard(data, wrapper) {
@@ -117,6 +140,14 @@ function handleAddCardFormSubmit(e) {
   e.target.reset();
   closePopup(addCardModal);
 }
+
+// Project 6 Step 4 - Close when escape button is pressed
+const closeModalWithEsc = (e) => {
+  if (e.key === "Escape") {
+    const activeModal = document.querySelector(".modal_opened");
+    closePopup(activeModal);
+  }
+};
 
 /* EVENT LISTENERS */
 

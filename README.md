@@ -13,10 +13,10 @@ An interactive page where users can add and remove photos, like photos of other 
 [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
 
 **Link to GitHub Code**
-https://github.com/AroundTheUS/project5
+https://github.com/AroundTheUS/project6
 
 **Link to GitHub Page**
-https://aroundtheus.github.io/project5
+https://aroundtheus.github.io/project6
 
 **Version**
-Project 5 review two
+Project 6 review 1
