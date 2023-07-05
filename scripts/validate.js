@@ -41,16 +41,12 @@ so when a user first opens a form the submit button will be disabled.
 Use toggleButtonState function for that.
 */
 
+function hasErrors(inputList) {
+  return !inputList.every((inputEl) => inputEl.validity.valid);
+}
+
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  let foundInvalid = false;
-
-  inputEls.forEach((inputEl) => {
-    if (!inputEl.validity.valid) {
-      foundInvalid = true;
-    }
-  });
-
-  if (foundInvalid) {
+  if (hasErrors(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
   } else {
@@ -68,14 +64,13 @@ function setEventListeners(formEl, options) {
 
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-// project 6 video @49.00
-// console.log(inputEl.validity.valid);    
-// console.log(inputEl.validationMessage);
-
       checkInputValidity(formEl, inputEl, options);
       toggleButtonState(inputEls, submitButton, options);
     });
   });
+
+  // Calls toggleButtonState during initialization
+  toggleButtonState(inputEls, submitButton, options);
 }
 
 // validation function
