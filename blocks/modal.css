@@ -105,8 +105,7 @@
 .modal__error {
   position: relative;
   color: red;
-
-  font-family: "inter", sans-serif;
+  font-family: "Inter", normal;
   font-size: 12px;
   line-height: 14px;
   display: block;
@@ -132,11 +131,10 @@
 
 /* Added for Project 6 step 1 and step 2 */
 .modal__button_disabled {
+  opacity: 0.2;
   background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
-  border: solid 1px;
-  cursor: default;
+  color: #000000;
+  border: 1px solid red;
 }
 
 /* Added for Project 6 step 1 and step 2 */

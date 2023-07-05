@@ -33,9 +33,24 @@ function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
 }
 
+/*
+Review Feedback: According to the checklist:
+The Submit button is inactive if at least one of the fields doesn't pass validation.
+You should disable submit button here, when initializing validation, 
+so when a user first opens a form the submit button will be disabled. 
+Use toggleButtonState function for that.
+*/
+
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  // console.log("6. toggleButtonState");
-  if (hasInvalidInput(inputEls)) {
+  let foundInvalid = false;
+
+  inputEls.forEach((inputEl) => {
+    if (!inputEl.validity.valid) {
+      foundInvalid = true;
+    }
+  });
+
+  if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
   } else {
@@ -43,6 +58,7 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
     submitButton.disabled = false;
   }
 }
+
 
 function setEventListeners(formEl, options) {
   // console.log("2. setEventListeners");
