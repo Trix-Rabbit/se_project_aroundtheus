@@ -93,8 +93,11 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #cfcfcf;
-  padding: 0;
-  margin: 0 0 20px;
+  
+  /* project 6 review 3 feedback - error text should be closer to input */
+  padding: 0 0 14px 0;
+  /* padding: 0; */
+  /* margin: 0 0 20px; */
 }
 
 /* Added for project 6 */
@@ -102,13 +105,13 @@
   border-bottom: 1px solid red;
 }
 
-.modal__input:not(:last-of-type) {
+/* .modal__input:not(:last-of-type) {
   margin: 0 0 30px;
-}
+} */
 
 /* Added for project 6 step 1 and step 2 */
 .modal__error {
-  position: relative;
+  /* position: relative; */
   color: red;
 
   font-family: "Inter", normal;
@@ -125,7 +128,7 @@
   color: #ffffff;
   font-size: 18px;
   line-height: 18px;
-  border: none;
+  /* border: none; */
   margin-top: 48px;
   padding: 13px 149px;
 }
@@ -136,7 +139,16 @@
 }
 
 /* Added for Project 6 step 1 and step 2 */
+.modal__button:disabled {
+  /* project 6 review 3 feedback - border is grey*/
+  border: 1px solid grey;
+  background-color: #ffffff;
+  color: #000000;
+  opacity: 0.2;
+}
+
 .modal__button_disabled {
+  border: red solid 10px;
   opacity: 0.2;
   background-color: #ffffff;
   color: #000000;

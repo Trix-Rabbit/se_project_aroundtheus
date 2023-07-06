@@ -139,6 +139,19 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListElement);
   e.target.reset();
   closePopup(addCardModal);
+
+  /* project 6 review 3 - 
+    According to the checklist:
+    The Submit button is inactive if at least one of the fields doesn't pass validation.
+    After adding a new card and reopening the modal window, a user can create an empty card. This shouldn't be possible.
+    Toggle button state here after resetting the form. Use toggleButtonState from validation file here, 
+    which is available for usage in this file.
+
+    toggleButtonState([addCardTitleInput, addCardImageInput], cardFormSubmitButton, validationOptions)
+  */
+  const inputEls = [...addCardFormElement.querySelectorAll(config.inputSelector)];
+  const submitButton = addCardFormElement.querySelector(config.submitButtonSelector);
+  toggleButtonState(inputEls, submitButton, config);
 }
 
 // Project 6 Step 4 - Close when escape button is pressed
