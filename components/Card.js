@@ -66,5 +66,20 @@ class Card {
     //return the card
     return this._cardElement;
   }
+
+  /*
+  //Form Data
+  getCardElement(cardData) {
+    const cardElement = cardTemplate.cloneNode(true);
+    const cardImageEl = cardElement.querySelector(".card__image");
+    const cardTitleEl = cardElement.querySelector(".card__description");
+
+    cardTitleEl.textContent = cardData.title;
+    cardImageEl.src = cardData.link;
+    cardImageEl.alt = cardData.title;
+    return cardElement;
+  }
+*/
+  
 }
 export default Card;
