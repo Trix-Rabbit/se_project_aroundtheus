@@ -39,7 +39,7 @@
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" id="profile-modal-close-button"></button>
-        <form class="modal__form">
+        <form class="modal__form" id="profile-form">
           <h1 class="modal__title">Edit Profile</h1>
             <input id="profile-title-input" class="modal__input" type="text" placeholder="Name" minlength="2" maxlength="40" required/>
             <span id="profile-title-input-error" class="modal__error" ></span>
@@ -68,10 +68,7 @@
     <!--Preview Image Modal-->    
     <div id="preview-image-modal" class="modal" >
       <div class="modal__preview">
-        <button id="preview-image-modal-close-button"
-        class="modal__close"
-        type="button"
-        ></button>
+        <button id="preview-image-modal-close-button" class="modal__close" type="button"></button>
         <img class="modal__preview-image" src="#" alt="#" />
         <p class="modal__preview-caption"></p>
       </div>
@@ -88,8 +85,8 @@
         </div>
       </li>
     </template>
-    <script src="./scripts/index.js" defer></script> 
-    <!-- Added validation Java Script -->
-    <script src="./scripts/validate.js" defer></script>
+    <script src="./pages/index.js" type="module"></script> 
+    <!-- Added validation Java Script in project 6, Removed in project 7 -->
+    <!-- <script src="./scripts/validate.js" defer></script> -->
   </body>
 </html>
