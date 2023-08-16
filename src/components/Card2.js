@@ -1,10 +1,22 @@
-import { openModal, closeModal } from "../utils/utils.js";
+/* 
+Project 8 
+Transforming the Card class
+Connect the Card class to the popup. Make Card take the handleCardClick() function 
+into the constructor. When the user clicks on the card, this function will open 
+the popup with an image.
 
-class Card {
-  constructor({ name, link }, cardSelector) {
-    this._name = name;
-    this._link = link;
+To Do:
+1. constructor to include handleCardClick passed in from index.js
+2. Remove _handlePreviewPicture
+3. Remove this._cardImage.addEventListener
+*/ 
+export default class Card {
+  constructor({ cardData, handleCardClick }, cardSelector) {
+    // alert("Card Init: " + cardData.name)
+    this._name = cardData.name;
+    this._link = cardData.link;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _handleLikeIcon() {
@@ -16,6 +28,7 @@ class Card {
     this._cardElement = null;
   }
 
+  /*
   _handlePreviewPicture() {
     this._previewImage.src = this._link;
     this._previewImage.alt = this._name;
@@ -23,6 +36,8 @@ class Card {
 
     openModal(this._previewImageModal);
   }
+*/
+
   _setEventListeners() {
     this._cardLikeButton.addEventListener("click", (event) => {
       /*       event.preventDefault();
@@ -36,10 +51,14 @@ class Card {
       this._handleDeleteCard();
     });
 
+    /*
     this._cardImage.addEventListener("click", () =>
       this._handlePreviewPicture()
     );
+    */
   }
+
+
   getView() {
     //get the card view
     this._cardElement = document
@@ -47,17 +66,11 @@ class Card {
       .content.querySelector(".card")
       .cloneNode(true);
     this._cardLikeButton =
-      this._cardElement.querySelector(".card__like-button");
+    this._cardElement.querySelector(".card__like-button");
     this._previewImageModal = document.querySelector("#preview-image-modal");
-    this._previewImage = this._previewImageModal.querySelector(
-      ".modal__preview-image"
-    );
-    this._previewCaption = this._previewImageModal.querySelector(
-      ".modal__preview-caption"
-    );
-    this._deleteCardButton = this._cardElement.querySelector(
-      ".card__delete-icon"
-    );
+    this._previewImage = this._previewImageModal.querySelector(".modal__preview-image");
+    this._previewCaption = this._previewImageModal.querySelector(".modal__preview-caption");
+    this._deleteCardButton = this._cardElement.querySelector(".card__delete-icon");
     this._cardImage = this._cardElement.querySelector(".card__image");
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
@@ -66,20 +79,4 @@ class Card {
     //return the card
     return this._cardElement;
   }
-
-  /*
-  //Form Data
-  getCardElement(cardData) {
-    const cardElement = cardTemplate.cloneNode(true);
-    const cardImageEl = cardElement.querySelector(".card__image");
-    const cardTitleEl = cardElement.querySelector(".card__description");
-
-    cardTitleEl.textContent = cardData.title;
-    cardImageEl.src = cardData.link;
-    cardImageEl.alt = cardData.title;
-    return cardElement;
-  }
-*/
-  
 }
-export default Card;

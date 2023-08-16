@@ -8,17 +8,20 @@
     <meta name="keywords" content="Responsive Website" />
     <meta name="author" content="Fred Cheng" />
     <title>Around the US</title>
-    <link href="./pages/index.css" rel="stylesheet"/>
+    <!-- Moved to index.js -->
+    <!-- <link href="./pages/index.css" rel="stylesheet"/> -->
+
+    <!-- favicon ok on initial load, but display an error after inital load -->
     <link rel="icon" type="image/icon" href="./favicon.ico" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Around the U.S. logo"/>
+        <img class="header__logo" src="<%=require('./images/logo.svg') %>" alt="Around the U.S. logo"/>
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="avatar jacques cousteau"/>
+          <img class="profile__image" src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar jacques cousteau"/>
           <div class="profile__info">
             <h1 id="profile-title" class="profile__title">Jacques Cousteau</h1>
             <button id="profile-edit-button" class="profile__edit-button" type="button"></button>
@@ -51,7 +54,7 @@
     </div>
 
     <!--Add Card Modal -->
-    <div id="add-card-modal" class="modal">
+      <div class="modal" id="add-card-modal" >
       <div class="modal__container">
         <button id="add-card-modal-close-button" class="modal__close" ></button>
         <form id="add-card-form" class="modal__form" >
@@ -67,6 +70,7 @@
 
     <!--Preview Image Modal-->    
     <div id="preview-image-modal" class="modal" >
+    <!-- <div id="preview-image-modal" class="modal" > -->
       <div class="modal__preview">
         <button id="preview-image-modal-close-button" class="modal__close" type="button"></button>
         <img class="modal__preview-image" src="#" alt="#" />
@@ -85,8 +89,7 @@
         </div>
       </li>
     </template>
-    <script src="./pages/index.js" type="module"></script> 
-    <!-- Added validation Java Script in project 6, Removed in project 7 -->
-    <!-- <script src="./scripts/validate.js" defer></script> -->
+    <!-- Moved to Webpack.config.js -->
+    <!-- <script src="./pages/index.js" type="module"></script>  -->
   </body>
 </html>
