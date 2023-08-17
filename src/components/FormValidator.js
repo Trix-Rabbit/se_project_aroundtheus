@@ -74,3 +74,31 @@ class FormValidator {
   }
 }
 export default FormValidator;
+
+/*
+From Review - Could be improved (Will update later in the future.)
+You can universally create instances of validators for all forms in the project 
+storing them inside one object formValidators.  
+And then you can take any validator using attribute name of the form where you 
+need to disable/enable the submit button or remove errors.
+
+
+const formValidators = {}
+
+// enable validation
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector))
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement)
+    // here you get the name of the form
+    const formName = formElement.getAttribute('name')
+
+   // here you store a validator by the `name` of the form
+    formValidators[formName] = validator;
+   validator.enableValidation();
+  });
+};
+
+enableValidation(config);
+*/
+
