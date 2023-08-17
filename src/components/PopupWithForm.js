@@ -24,6 +24,8 @@ export default class PopupWithForm extends Popup {
     //grab all the inputs and iterate thru to store the data to the object
     this._popupInputs.forEach((input) => {
       inputData[input.name] = input.value;
+
+      // alert("PopupWithForm_popupInputs. name = " + input.name +  ", value = " + input.value)
     });
 
     return inputData;

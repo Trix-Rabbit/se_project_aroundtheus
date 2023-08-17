@@ -70,6 +70,7 @@ class FormValidator {
       this._hideInputError(inputElement);
     });
     this._toggleButtonState();
+
   }
 }
 export default FormValidator;

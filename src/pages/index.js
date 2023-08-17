@@ -25,6 +25,7 @@ const profileDescriptionInput = document.querySelector("#profile-description-inp
 // Store Default value to userInfo object
 const userInfo = new UserInfo(profileTitle, profileDescription);
 
+
 // Edit Profile Button
 const profileEditButton = document.querySelector("#profile-edit-button");
 
@@ -51,8 +52,6 @@ const profileSavePopup = new PopupWithForm("#profile-edit-modal", (data) => {
 // Save Button Set Event Listener
 profileSavePopup.setEventListeners();
 // ********** Profile / User Info ************* END
-
-
 
 
 
@@ -139,8 +138,10 @@ const addNewCardButton = document.querySelector("#profile__add-button");
 const cardTitleInput = document.querySelector("#add-card-title-input");
 const cardUrlInput = document.querySelector("#add-card-image-url");
 
+
 function handleCreateButton(inputValues) {
-  // alert("handleImgFormSubmit");
+  // alert("handleCreateButton");
+  // alert("inputValues.name = " + inputValues.name + ", link = " + inputValues.link);
   const { name, link } = inputValues;
   const newCard = createCard({ name, link });
 
