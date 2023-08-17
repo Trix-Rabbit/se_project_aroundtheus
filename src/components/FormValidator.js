@@ -100,5 +100,14 @@ const enableValidation = (config) => {
 };
 
 enableValidation(config);
+
+And now you can use them for disabling buttons or clearing errors:
+
+formValidators[ profileForm.getAttribute('name') ].resetValidation()
+
+// or you can use a string – the name of the form (you know it from `index.html`)
+
+formValidators['profile-form'].resetValidation()
+
 */
 
