@@ -1,9 +1,29 @@
 export default class UserInfo {
+  constructor(selectors) {
+    this.name = document.querySelector(selectors.name);
+    this.description = document.querySelector(selectors.description);
+  }
+
+  getUserInfo() {
+    return {
+      name: this.name.textContent,
+      description: this.description.textContent,
+    };
+  }
+
+  setUserInfo(name, description) {
+    this.name.textContent = name;
+    this.description.textContent = description;
+  }
+}
+
+/*
+export default class UserInfo {
   constructor(name, description) {
     this._name = name;
     this._description = description;
 
-    // alert("UserInfo constructor. " + name + ", " + description);
+    alert("UserInfo constructor. " + name + ", " + description);
   }
 
   getUserInfo() {
@@ -12,7 +32,7 @@ export default class UserInfo {
     userData["profileTitle"] = this._name.textContent;
     userData["profileDescription"] = this._description.textContent;
 
-    // alert("getUserInfo. " + this._name.textContent + ", " + this._description.textContent);
+    alert("getUserInfo. " + this._name.textContent + ", " + this._description.textContent);
     return userData;
   }
 
@@ -23,6 +43,7 @@ export default class UserInfo {
     this._description.textContent = description;
 
     // alert("setUserInfo 1. " + name + ", " + description);
-    // alert("setUserInfo 2. " + this._name.textContent + ", " + this._description.textContent);
+    alert("setUserInfo 2. " + this._name.textContent + ", " + this._description.textContent);
   }
 }
+*/
