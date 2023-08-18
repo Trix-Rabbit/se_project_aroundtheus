@@ -95,7 +95,7 @@ const addNewCardPopUp = new PopupWithForm("#add-card-modal", handleAddCardForm);
 
 addNewCardButton.addEventListener("click", () => {
   // alert("addNewCardButton clicked.");
-    addCardValidator._toggleButtonState();
+    addCardValidator.toggleButtonState();
     addNewCardPopUp.open();
   }
 );
