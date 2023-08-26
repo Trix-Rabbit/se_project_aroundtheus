@@ -5,7 +5,22 @@
   margin-bottom: 47.25px;
 }
 
-  
+
+/* P9-8. Updating profile picture START*/
+.profile__image-edit {
+  transition: opacity ease-in-out 0.2s;
+}
+
+.profile__image-edit:hover .profile__image {
+  opacity: 0.4;
+  z-index: 5;
+}
+
+.profile__image-edit:hover .profile__image-edit-tool {
+  opacity: 1;
+}
+/* P9-8. Updating profile picture END */
+
 .profile__image {
   width: 120px;
   height: 120px;
@@ -13,6 +28,23 @@
   border-radius: 50%;
   background-position: center;
 }
+
+/* P9-8. Updating profile picture START*/
+.profile__image-edit-icon {
+  width: 26px;
+  height: 26px;
+  left: 45px;
+  top: 90px;
+  right: 100px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.profile__image-edit-icon:hover {
+  opacity: 1;
+}
+/* P9-8. Updating profile picture END */
 
 .profile__info {
   display: grid;

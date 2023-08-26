@@ -21,7 +21,12 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar jacques cousteau"/>
+          <!-- New Div for P9 -->
+          <div class="profile__image-edit" id="profile-avatar-edit">
+            <img class="profile__image" src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar jacques cousteau"/>
+            <img class="profile__image-edit-icon" src="<%=require('./images/edit-profile-icon.svg')%>" alt="pencil tool"/>
+          </div>
+          <!-- New Div for P9 END -->
           <div class="profile__info">
             <h1 id="profile-title" class="profile__title" name="name">Jacques Cousteau</h1>
             <button id="profile-edit-button" class="profile__edit-button" type="button"></button>
@@ -78,6 +83,33 @@
       </div>
     </div>
     
+    <!-- P9-5. Creating a popup for deleting a card -->
+    <div class="modal" id="confirm-delete-modal">
+      <div class="modal__container" id="confirm-delete-modal-container">
+        <button class="modal__close"></button>
+        <form class="modal__form" id="confirm-delete-form" novalidate>
+          <h2 class="modal__title" for="heading-confirm">Are you sure?</h2>
+          <button class="modal__button" for="confirm-submit-delete-button" type="submit">Yes</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- P9-8. Updating profile picture -->
+    <!-- change avatar popup-->
+    <div class="modal" id="profile-image-modal">
+      <div class="modal__container" id="profile-image-container">
+        <button id="preview-image-modal-close-button" class="modal__close" type="button"></button>
+        <form class="modal__form" id="profile-image-form" novalidate>
+          <h2 class="modal__title" for="heading-avatar">Change profile picture</h2>
+          <input type="url" name="link" id="url-input" placeholder="Link" class="modal__input modal__input_type_url" required for="avatar-image-input"/>
+          <span class="modal__error" id="url-input-error"></span>
+          <button class="modal__button" type="submit" for="submit-avatar">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!--Card Template-->
     <template id="card-template">
       <li class="card">
