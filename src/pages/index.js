@@ -24,10 +24,23 @@ import Api from "../components/Api.js";
 
 
 /*
-To Do before Review
-  P9-5. Creating a popup for deleting a card
-  P9-8. Updating profile picture
-  P9-9. Improving UX of all forms
+Still To Do from Review
+1. Every variable in the project should be in camelCase (in lower case if it's not a class or component)
+=> I checked my variables, they all appear to be in lower case.  Perhaps there is something I missed.
+  I checked the .js files for lines that started with const and let.  
+  Please let me know if I missed something where the variable was NOT in camelCase
+
+2. Function names should start with a verb in infinitive (there is such a point in the check list). 
+It’s common in coding to do it so that functions could speak for themselves about what they do.
+=> In index.js, there are only two functions.  First started with handle, and the second one starts with create.  
+    both should be verbs. 
+function handleAddCardForm
+function createCard(card) 
+  There are also some other ones that does start with the word handle
+handleCardClick
+handleDeleteClick
+handleLikeClick
+... So should I change these to clickCardHandle? clickDeleteHandle? and clickLikeHandle?
 */
 
 /*
@@ -63,7 +76,34 @@ const userInfo = new UserInfo({
 
 //Loading user info via API on startup
 let userId;
+let cardSection;
+// From Review
+// You need to combine the requests of the user's info and the cards together in Promise.all
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then(([userData, cardDataAPI]) => {
 
+    // p9-1. Loading user information from the server **********************
+    userInfo.setUserInfo(userData.name, userData.about);
+    userInfo.setUserAvatar(userData.avatar);
+    userId = userData._id;
+
+    // p9-2. Loading cards from the server  *****************************
+    cardSection = new Section(
+      {
+        items: cardDataAPI,
+        renderer: (data) => {
+          const cardElement = createCard(data);
+          cardSection.addItem(cardElement);
+        },
+      },
+      cardsWrap
+    );
+    cardSection.renderItems(cardData);
+  })
+  .catch(console.error);
+
+/*
+// Code works, but need to use Promise.all from project review
 // p9-1. Loading user information from the server **********************
 api.getUserInfo()
   .then((userData) => {
@@ -97,7 +137,7 @@ api.getInitialCards()
 
 })
 .catch(console.error);
-
+*/
 
 // Store Default value to userInfo object
 const handleProfileEditForm = (inputValues) => {
@@ -107,14 +147,19 @@ const handleProfileEditForm = (inputValues) => {
   api.updateUserInfo(inputValues.name, inputValues.description)
     .then(() => {
       userInfo.setUserInfo(inputValues.name, inputValues.description);
-      // profileFormModal.close();
       profileSavePopup.close();
     })
     .catch(console.error)
     .finally(() => {
-      addNewCardPopUp.DefaultSaveInfoListener();
+
+      // From review => When I submit the profile form the button get Saving... forever 
+      // https://disk.yandex.ru/i/JjD5KBfQ0elAZQ
+
+      // Had the wrong form reset back to default.  
+      // Chaged to profileSavePopup from addNewCardPopUp
+      profileSavePopup.DefaultSaveInfoListener();
+      // addNewCardPopUp.DefaultSaveInfoListener();
     });
- 
 
 };
 
@@ -191,10 +236,10 @@ function createCard(card) {
           api.deleteCard(card._id)
           .then((res) => {
             cardElement.handleDeleteButton();
+            popupConfirm.close();
           })
           .catch(console.error)
           .finally(() => {
-            popupConfirm.close();
           });
         });
         popupConfirm.open();

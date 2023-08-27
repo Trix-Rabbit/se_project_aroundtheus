@@ -11,7 +11,6 @@ export default class Card {
     this._handleLikeClick = handleLikeClick;
 
     this._cardSelector = cardSelector;
-
   }
 
   //=================Event Handlers==========================\\

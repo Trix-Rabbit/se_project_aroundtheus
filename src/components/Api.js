@@ -12,14 +12,17 @@ export default class Api {
   }
 
   async _request(url, options) {
-    try {
       const res = await fetch(url, options);
       return this._handleApiResponses(res);
-    } catch (error) {
-      console.error("There is an API issue");
-      throw error;
-    }
   }
+  // From review
+  // It’s better not to use catch in Api because you need to catch possible errors at the very
+  //  end of any request and this end is in index.js after all blocks then. And in real 
+  //  projects blocks catch usually open error popups and so on.    
+    // catch (error) {
+    //   console.error("There is an API issue");
+    //   throw error;
+    // }
 
   // Card route methods
   getInitialCards() {

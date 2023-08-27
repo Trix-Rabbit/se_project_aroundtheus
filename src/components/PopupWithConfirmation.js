@@ -15,8 +15,8 @@ export default class PopupWithConfirmation extends Popup {
     this._confirmButton = this._popupElement.querySelector(".modal__button");
     this._confirmButton.addEventListener("click", (evt) => {
       evt.preventDefault();
-      console.log(evt);
-      console.log("this button is listening");
+      // console.log(evt);
+      // console.log("this button is listening");
       this._submitButton();
     });
   }
