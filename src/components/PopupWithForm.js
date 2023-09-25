@@ -31,12 +31,27 @@ export default class PopupWithForm extends Popup {
     return inputData;
   }
 
+  // P9-9. Improving UX of all forms
+  // saveInfoListener() {
+  setLoadingText(){ 
+    this._submitButton = this._popupElement.querySelector(".modal__button");
+    this._submitButton.textContent = "Saving...";
+  }
+  // P9-9. Improving UX of all forms
+  // DefaultSaveInfoListener() {
+  setLoadingTextDefault() {
+    this._submitButton = this._popupElement.querySelector(".modal__button");
+    this._submitButton.textContent = "Save";
+  }
+
   setEventListeners() {
     super.setEventListeners();
 
     //when form is submitted, make getInputValues to fire
     this._popupForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      this.setLoadingText();
+      // this.saveInfoListener();
       this._handleFormSubmit(this._getInputValues());
     });
   }

@@ -4,6 +4,9 @@
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const previewImageModal = document.querySelector("#preview-image-modal");
+// Form
+export const profileForm = document.forms["profile-form"];
+export const profileImageForm = document.forms["profile-image-form"];
 export const cardForm = document.forms["add-card-form"];
 
   // Input Data Value
@@ -14,8 +17,7 @@ export const profileDescriptionInput = document.querySelector("#profile-descript
 
 // Create userInfo object
 
-// Form
-export const profileForm = document.forms["profile-form"];
+
 
 // Default Data Value 
 export const profileTitle = document.querySelector(".profile__title");               // Jacques Cousteau
