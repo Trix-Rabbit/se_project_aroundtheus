@@ -32,12 +32,12 @@ export default class PopupWithForm extends Popup {
   }
 
   // P9-9. Improving UX of all forms
-  saveInfoListener() {
+  setLoadingText() {
     this._submitButton = this._popupElement.querySelector(".modal__button");
     this._submitButton.textContent = "Saving...";
   }
   // P9-9. Improving UX of all forms
-  DefaultSaveInfoListener() {
+  setLoadingText() {
     this._submitButton = this._popupElement.querySelector(".modal__button");
     this._submitButton.textContent = "Save";
   }
