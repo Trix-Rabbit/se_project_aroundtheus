@@ -157,7 +157,7 @@ const handleProfileEditForm = (inputValues) => {
 
       // Had the wrong form reset back to default.  
       // Chaged to profileSavePopup from addNewCardPopUp
-      profileSavePopup.DefaultSaveInfoListener();
+      profileSavePopup.setLoadingTextDefault();
       // addNewCardPopUp.DefaultSaveInfoListener();
     });
 
@@ -202,7 +202,7 @@ function handleAddCardForm(inputValues) {
       console.error("an error has occurred", err);
     })
     .finally(() => {
-      addNewCardPopUp.DefaultSaveInfoListener();
+      addNewCardPopUp.setLoadingTextDefault();
     });
 }
 
@@ -315,7 +315,8 @@ const handleProfileImageForm = (inputValues) => {
     console.error("an error has occurred", err);
   })
   .finally(() => {
-    editProfileImage.DefaultSaveInfoListener();
+    editProfileImage.setLoadingTextDefault();
+    // editProfileImage.DefaultSaveInfoListener();
   });
 
 };
